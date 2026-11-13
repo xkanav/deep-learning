@@ -1,0 +1,63 @@
+Verification run: 2026-11-13T09:42Z, Python 3.13.18, NumPy 2.5.3
+All numbers below come from SYNTHETIC fake experts (see README). They are NOT RSDehazeNet / FCTF-Net results.
+
+== unit tests ==
+test_checkpoint_and_no_target (test_dehaze_fusion.Tests.test_checkpoint_and_no_target) ... ok
+test_convex_mixture (test_dehaze_fusion.Tests.test_convex_mixture) ... ok
+test_dark_channel (test_dehaze_fusion.Tests.test_dark_channel) ... ok
+test_gradients (test_dehaze_fusion.Tests.test_gradients) ... ok
+test_metrics (test_dehaze_fusion.Tests.test_metrics) ... ok
+test_pack_png_and_evaluate (test_dehaze_fusion.Tests.test_pack_png_and_evaluate) ... ok
+test_validation_and_leakage (test_dehaze_fusion.Tests.test_validation_and_leakage) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.056s
+
+OK
+
+== two experts ==
+{"samples": {"train": 12, "val": 4, "test": 4}, "models": ["synthetic_thin_expert", "synthetic_dense_expert"], "unique_scenes": 20}
+{
+  "samples": {
+    "train": 12,
+    "val": 4,
+    "test": 4
+  },
+  "models": [
+    "synthetic_thin_expert",
+    "synthetic_dense_expert"
+  ],
+  "unique_scenes": 20
+}
+{"epoch": 30, "train_loss": 0.0007374310048458016, "val_mse": 0.0008289193065107108}
+| Method | Region | PSNR (dB) | SSIM | MAE | N |
+|---|---|---|---|---|---|
+| hazy_input | all | 14.60 | 0.7712 | 0.1717 | 4 |
+| hazy_input | dense | 13.23 | 0.7090 | 0.2078 | 4 |
+| hazy_input | thin | 16.74 | 0.8335 | 0.1355 | 4 |
+| mean_raw | all | 29.02 | 0.9328 | 0.0265 | 4 |
+| mean_raw | dense | 26.93 | 0.9193 | 0.0358 | 4 |
+| mean_raw | thin | 33.34 | 0.9463 | 0.0171 | 4 |
+| gated | all | 31.92 | 0.9518 | 0.0173 | 4 |
+| gated | dense | 29.45 | 0.9221 | 0.0261 | 4 |
+| gated | thin | 38.31 | 0.9815 | 0.0085 | 4 |
+| synthetic_thin_expert | all | 25.25 | 0.9311 | 0.0317 | 4 |
+| synthetic_thin_expert | dense | 22.37 | 0.8823 | 0.0563 | 4 |
+| synthetic_thin_expert | thin | 38.01 | 0.9799 | 0.0070 | 4 |
+| synthetic_dense_expert | all | 27.68 | 0.8364 | 0.0330 | 4 |
+| synthetic_dense_expert | dense | 27.58 | 0.8332 | 0.0333 | 4 |
+| synthetic_dense_expert | thin | 27.78 | 0.8397 | 0.0326 | 4 |
+runs/prediction.npz
+
+== three experts ==
+{"samples": {"train": 12, "val": 4, "test": 4}, "models": ["synthetic_thin_expert", "synthetic_dense_expert", "synthetic_noisy_expert"], "unique_scenes": 20}
+{"epoch": 30, "train_loss": 0.0006217253368831702, "val_mse": 0.0006846563067856344}
+| hazy_input | all | 14.60 | 0.7712 | 0.1717 | 4 |
+| mean_raw | all | 28.97 | 0.8904 | 0.0280 | 4 |
+| gated | all | 32.71 | 0.9563 | 0.0160 | 4 |
+| synthetic_thin_expert | all | 25.25 | 0.9311 | 0.0317 | 4 |
+| synthetic_dense_expert | all | 27.68 | 0.8364 | 0.0330 | 4 |
+| synthetic_noisy_expert | all | 22.01 | 0.5774 | 0.0633 | 4 |
+
+== pack_folder (PNG round trip) ==
+packed 3 samples into /tmp/pf/packed
