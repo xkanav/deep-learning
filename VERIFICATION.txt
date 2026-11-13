@@ -1,0 +1,18 @@
+test_checkpoint_and_no_target (test_fusion.Tests.test_checkpoint_and_no_target) ... ok
+test_gradients (test_fusion.Tests.test_gradients) ... ok
+test_metrics (test_fusion.Tests.test_metrics) ... ok
+test_two_three_and_clear_identity (test_fusion.Tests.test_two_three_and_clear_identity) ... ok
+test_validation_and_leakage (test_fusion.Tests.test_validation_and_leakage) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.171s
+
+OK
+{"samples": {"train": 8, "val": 3, "test": 3}, "models": ["synthetic_good", "synthetic_noisy", "synthetic_noisier"], "unique_scenes": 14}
+{"epoch": 30, "train_loss": 0.003939627467885858, "val_mse": 0.0028652525188231346}
+runs/prediction.npz
+{"samples": {"train": 8, "val": 3, "test": 3}, "models": ["synthetic_good", "synthetic_noisy"], "unique_scenes": 14}
+{"epoch": 2, "train_loss": 0.003091290969189909, "val_mse": 0.0021313800054350725}
+/tmp/fusion_two_prediction.npz
+
+Three-expert synthetic gate: 25.40 dB; clear-preserving average: 24.73 dB; strongest artificial expert: 34.01 dB. Synthetic only. Two-expert pipeline also passed. No real satellite evaluation performed.
