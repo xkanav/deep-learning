@@ -15,4 +15,3 @@ runs/prediction.npz
 {"epoch": 2, "train_loss": 0.003091290969189909, "val_mse": 0.0021313800054350725}
 /tmp/fusion_two_prediction.npz
 
-Three-expert synthetic gate: 25.40 dB; clear-preserving average: 24.73 dB; strongest artificial expert: 34.01 dB. Synthetic only. Two-expert pipeline also passed. No real satellite evaluation performed.
