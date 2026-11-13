@@ -92,13 +92,3 @@ Training can be done on CPU. The code loads one patch's expert predictions at a 
 
 Upload the contents of this directory to the root of your GitHub repository. No data, pretrained weights, or credentials are included. Confirm upstream model/data licenses and cite their papers when using their outputs. Original fusion source is provided for your project; no upstream source has been copied.
 
-## Sources
-
-- GLF-CR: https://github.com/xufangchn/GLF-CR
-- HPN-CR: https://github.com/G-pz/HPN-CR
-- HS2P: https://github.com/weifanyi515/HS2P
-- CR-GAN-PM: https://github.com/Neooolee/CR-GAN-PM
-- EMRDM: https://github.com/Ly403/EMRDM
-- SEN12MS-CR: https://patricktum.github.io/cloud_removal/sen12mscr/
-
-The supplied research review motivated the selection. CR-GAN-PM's default four-band contract makes it a poor direct fit for this 13-band ensemble. EMRDM is a possible future expert after its output scale, band contract and inference cost are verified; it is not integrated here.
